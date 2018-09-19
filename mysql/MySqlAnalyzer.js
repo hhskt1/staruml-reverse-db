@@ -23,6 +23,8 @@ class MySqlAnalyzer extends DbAnalyzer {
         + "  col.DATA_TYPE                                      AS data_type, "
         + "  col.CHARACTER_MAXIMUM_LENGTH                       AS max_length, "
         + "  col.DATETIME_PRECISION                             AS date_precision, "
+		+ "  col.COLUMN_COMMENT                                 AS column_comment,"
+		+ "  col.EXTRA                                          AS extra,"
         + "  IF(col.IS_NULLABLE='NO', FALSE, TRUE)              AS is_nullable, "
         + "  IF(ks.CONSTRAINT_TYPE='PRIMARY KEY', TRUE, FALSE)  AS is_primary_key, "
         + "  IF(ks.CONSTRAINT_TYPE='UNIQUE', TRUE, FALSE)       AS is_unique, "

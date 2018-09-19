@@ -78,6 +78,8 @@ class ErDmBuilder {
     elem.type = element.data_type.toUpperCase();
     elem.length = element.max_length ? element.max_length.toString() : "";
     elem.foreignKey = Boolean(element.is_foreign_key);
+	const extra = element.extra ? element.extra : "";
+	elem.documentation = element.column_comment ? element.column_comment + extra : "";
     elem.referenceTo = elem.foreignKey
         ? this.createReference(elem,
             element.foreign_key_name,
